@@ -1,73 +1,82 @@
 # Página `/links` — Link in Bio da Aliny Rayze
 
-Página minimalista no estilo "link in bio" para `https://alinyrayze.com.br/links`, seguindo 100% o guia de marca da Aliny.
+Página minimalista no estilo "link in bio" para `https://alinyrayze.com.br/links`, seguindo o guia de marca da Aliny.
 
-## O que é
+## Estrutura visual
 
-Um único arquivo HTML autocontido (`index.html`) com:
-- Avatar circular com halo sage suave
-- Nome em **Averes Title Roman** + função em **Raleway** (caixa alta com letterspacing)
-- Tagline curta no tom da marca ("Existe um jeito *mais claro* de viver")
-- 7 links em pílula (cards arredondados full-width)
-- Botão CTA primário com a animação `breathe` (pulsa como respiração — assinatura do site)
-- Divisor ornamental sage + frase de fechamento + copyright
+- **Avatar circular com anel estilo Instagram** — gradiente cônico nas cores da marca (sage → bege → dourado), com gap interno cremoso, igual ao ring do feed/stories.
+- **Nome** "Aliny Rayze" em **Raleway Light (300)** com letterspacing — fonte fina e minimalista.
+- **Subtítulo** "PSICANÁLISE & FEMINILIDADE" em caixa alta sage com letterspacing largo.
+- **Tagline** curta no tom da marca.
+- **4 botões em pílula** stack vertical:
+  1. **Agendar minha consulta** — CTA primário sage com animação `breathe`.
+  2. **Conheça meu site** — alinyrayze.com.br
+  3. **Ouça _Ordem no Caos_ no Spotify** — com tag _em breve_, não-clicável.
+  4. **Fale comigo no WhatsApp**.
+- Divisor ornamental + frase de fechamento.
 
-Inspirado no formato do `juniorlopes.com.br`, mas inteiramente com a paleta sage/cream/taupe e a tipografia da Aliny.
+## Antes de publicar — substituir 2 coisas
 
-## Botões incluídos (na ordem)
+### 1. Foto de perfil
+Salve a foto da Aliny em:
+```
+links/avatar.jpg
+```
+(pode ser `.jpg`, `.jpeg`, `.png` ou `.webp` — se não for `.jpg`, edite `<img src="./avatar.jpg">` no HTML).
 
-1. **Agendar sessão pelo WhatsApp** — CTA primário, fundo sage, com animação breathe
-2. **Site oficial** — alinyrayze.com.br
-3. **Instagram** — @alinyrayze
-4. **Atendimento online** — âncora `#atendimentoonline` no site
-5. **Quem sou eu** — âncora `#quemsou`
-6. **Depoimentos** — âncora `#depoimentos`
-7. **E-mail** — `mailto:contato@alinyrayze.com.br`
+Se o arquivo não existir, o `onerror` do `<img>` faz fallback automático para a foto que já está no servidor (`alinyrayze-2.webp`), então a página não quebra durante testes.
 
-## Antes de publicar — substituir placeholders
+### 2. Número do WhatsApp
+Trocar `wa.me/55SEUNUMERO` em **dois botões** (1º e 4º) pelo DDI+DDD+número da Aliny. Ex: `wa.me/5511999999999`.
 
-Edite no `index.html`:
-
-| Placeholder | Onde | O que colocar |
-|---|---|---|
-| `wa.me/55SEUNUMERO` | botão WhatsApp | DDI+DDD+número da Aliny (ex: `wa.me/5511999999999`) |
-| `contato@alinyrayze.com.br` | botão E-mail (texto e `href`) | e-mail real, ou remover o botão se preferir só WhatsApp |
-| Mensagem pré-preenchida do WhatsApp | parâmetro `text=` | personalizar se quiser |
+### 3. (Quando o podcast estrear)
+No 3º botão (Spotify), trocar:
+```html
+<a class="link coming" aria-disabled="true" tabindex="-1">
+```
+por:
+```html
+<a class="link" href="https://open.spotify.com/show/SEU-ID-DO-SHOW" target="_blank" rel="noopener">
+```
+E remover o `<span class="tag">em breve</span>` do label.
 
 ## Como publicar no WordPress
 
-A rota `alinyrayze.com.br/links` já está criada no WordPress. Três opções:
+A rota `alinyrayze.com.br/links` já está criada. Três opções:
 
 ### Opção 1 — Página com Elementor "HTML"
-1. Editar a página `/links` com Elementor.
-2. Trocar o template para **Elementor Canvas** (sem header/footer do tema) — _Configurações da página → Layout → Elementor Canvas_.
-3. Adicionar um widget **HTML** e colar o conteúdo de `<body>...</body>` (apenas o que está dentro do body), e mover o conteúdo dentro de `<style>` para a aba _Custom CSS_ (ou manter no widget HTML mesmo).
-4. Salvar.
+1. Editar a página `/links` no WordPress.
+2. Trocar o template para **Elementor Canvas** (sem header/footer do tema).
+3. Adicionar widget **HTML** e colar o conteúdo de `<body>...</body>`. CSS pode ir no widget HTML mesmo (junto) ou no _Custom CSS_.
+4. Subir `avatar.jpg` na biblioteca de mídia e trocar `./avatar.jpg` pela URL completa.
 
-### Opção 2 — Page template customizado (mais limpo)
-1. Criar `page-links.php` no tema (ou child theme) com o conteúdo deste arquivo.
-2. WordPress detecta automaticamente se a slug da página for `links`.
-3. Limpar cache.
+### Opção 2 — Pasta estática (mais simples e mais rápido)
+Subir a pasta `links/` inteira via FTP para a raiz do servidor:
+```
+public_html/links/
+├── index.html
+└── avatar.jpg
+```
+WordPress não interfere — a pasta é servida diretamente. Performance máxima, zero plugin, zero config. Resultado em `alinyrayze.com.br/links/`.
 
-### Opção 3 — Estática (mais simples)
-1. Subir `index.html` direto via FTP em `/links/index.html` na raiz do servidor.
-2. WordPress não interfere se a pasta existir antes de chegar no roteamento.
-3. Resultado: `alinyrayze.com.br/links/` serve o HTML diretamente — performance máxima.
+### Opção 3 — Page template no tema
+Criar `page-links.php` no child theme com o conteúdo de `index.html`. WordPress detecta pela slug `links`.
 
 ## Observações técnicas
 
-- **Fontes** carregadas direto de `alinyrayze.com.br/wp-content/uploads/2026/04/` — não há request externo a Google Fonts.
-- **Performance:** zero JS, CSS embutido, ~7KB HTML + 3 fontes (~450KB total).
-- **Acessibilidade:** `aria-label` nos blocos, `prefers-reduced-motion` desliga a animação `breathe`, contraste validado.
-- **Mobile-first:** layout até 440px de largura central, ajusta tipografia em telas <380px.
-- **Open Graph** configurado para compartilhamento bonito no WhatsApp/Instagram DM.
+- **Fontes:** Raleway 200/300/400/500/700 carregadas do Google Fonts (precisamos do peso 300 que não está nos `.ttf` locais da marca, daí a exceção). Carregamento com `display=swap`.
+- **Performance:** zero JS, CSS embutido, ~9KB HTML.
+- **Acessibilidade:** `aria-label`, `aria-disabled` no botão "em breve", `prefers-reduced-motion` desliga animação.
+- **Mobile-first:** layout central até 440px, ajustes finos em <380px.
+- **Open Graph** configurado pra compartilhamento bonito no WhatsApp/Instagram DM.
 
 ## Personalização rápida
 
-| Mudar | Onde no CSS |
+| Mudar | Onde |
 |---|---|
 | Cor primária (sage) | `--sage` no `:root` |
-| Foto do avatar | `<img src="..."` dentro de `.avatar` |
-| Adicionar/remover botão | duplicar bloco `<a class="link">` em `.links` |
-| Promover botão para CTA primário | adicionar classe `primary` no `<a>` |
+| Foto do avatar | trocar `./avatar.jpg` |
+| Adicionar/remover botão | duplicar bloco `<a class="link">` em `<nav class="links">` |
+| Promover botão para CTA | adicionar classe `primary` no `<a>` |
 | Tirar animação breathe | remover `animation: breathe...` em `.link.primary` |
+| Ativar botão "em breve" | trocar `class="link coming"` por `class="link"` e adicionar `href` |

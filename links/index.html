@@ -3,33 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Aliny Rayze · Links</title>
-<meta name="description" content="Aliny Rayze — Psicanalista. Agende sua sessão, acesse o site oficial, redes e contato." />
+<title>Aliny Rayze · Psicanálise & Feminilidade</title>
+<meta name="description" content="Aliny Rayze — Psicanálise & Feminilidade. Agende sua consulta, acesse o site, ouça o podcast e fale comigo." />
 <link rel="icon" href="https://alinyrayze.com.br/wp-content/uploads/2026/04/cropped-favicon-1-192x192.webp" />
-<meta property="og:title" content="Aliny Rayze · Psicanalista" />
-<meta property="og:description" content="Existe um jeito mais claro de viver. Agende sua sessão." />
+<meta property="og:title" content="Aliny Rayze · Psicanálise & Feminilidade" />
+<meta property="og:description" content="Existe um jeito mais claro de viver. Agende sua consulta." />
 <meta property="og:image" content="https://alinyrayze.com.br/wp-content/uploads/2026/04/alinyrayze-2.webp" />
 <meta property="og:url" content="https://alinyrayze.com.br/links" />
 <meta name="theme-color" content="#F7F6F2" />
 
-<style>
-  /* ---- Fontes da marca (carregadas do WordPress) ---- */
-  @font-face{
-    font-family:'Averes Title Roman';
-    font-style:normal; font-weight:400; font-display:swap;
-    src:url('https://alinyrayze.com.br/wp-content/uploads/2026/04/AveresTitleRoman-Regular.ttf') format('truetype');
-  }
-  @font-face{
-    font-family:'Raleway';
-    font-style:normal; font-weight:400; font-display:swap;
-    src:url('https://alinyrayze.com.br/wp-content/uploads/2026/04/Raleway-Regular.ttf') format('truetype');
-  }
-  @font-face{
-    font-family:'Raleway';
-    font-style:normal; font-weight:700; font-display:swap;
-    src:url('https://alinyrayze.com.br/wp-content/uploads/2026/04/Raleway-Bold.ttf') format('truetype');
-  }
+<!-- Raleway com peso 300 (Light) — para o visual mais minimalista pedido -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 
+<style>
   /* ---- Tokens da marca ---- */
   :root{
     --sage:#A1AF9E;
@@ -42,7 +30,6 @@
     --ink:#4A4A45;
     --shadow: 0 1px 2px rgba(78,110,71,.04), 0 8px 24px rgba(78,110,71,.06);
     --radius-pill: 100px;
-    --radius-card: 18px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -66,71 +53,92 @@
     align-items:center; text-align:center;
   }
 
-  /* ---- Avatar ---- */
+  /* ---- Avatar estilo perfil do Instagram ---- */
   .avatar{
-    width:128px; height:128px;
+    width:132px; height:132px;
     border-radius:50%;
-    overflow:hidden;
-    box-shadow: 0 0 0 6px var(--cream), 0 0 0 7px var(--sage-light), var(--shadow);
-    background:var(--sage-light);
-    margin-bottom:24px;
+    padding:3px;                       /* espessura do anel */
+    background:
+      conic-gradient(
+        from 200deg,
+        var(--sage) 0deg,
+        var(--beige) 90deg,
+        var(--gold) 180deg,
+        var(--sage-light) 270deg,
+        var(--sage) 360deg
+      );
+    box-shadow: var(--shadow);
+    margin-bottom:20px;
+    position:relative;
   }
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .avatar::before{
+    /* gap branco entre o anel e a foto, igual ao Instagram */
+    content:"";
+    position:absolute; inset:3px;
+    border-radius:50%;
+    background:var(--cream);
+  }
+  .avatar img{
+    position:relative;
+    width:100%; height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    border:3px solid var(--cream);     /* o gap visual */
+    background:var(--sage-light);
+  }
 
   /* ---- Identidade ---- */
   .name{
-    font-family:'Averes Title Roman', serif;
-    font-weight:400;
-    font-size:34px;
-    line-height:1.15;
-    color:var(--sage);
-    letter-spacing:.5px;
+    font-family:'Raleway', sans-serif;
+    font-weight:300;                   /* fonte mais fina e minimalista */
+    font-size:30px;
+    line-height:1.2;
+    color:var(--taupe);
+    letter-spacing:1px;
   }
   .role{
-    margin-top:8px;
+    margin-top:10px;
     font-family:'Raleway', sans-serif;
-    font-size:13px;
+    font-size:11px;
     font-weight:400;
-    letter-spacing:2.5px;
+    letter-spacing:3.5px;
     text-transform:uppercase;
-    color:var(--taupe);
+    color:var(--sage);
   }
-  .role span{color:var(--sage);margin:0 6px}
 
   .tagline{
-    margin-top:20px;
-    font-family:'Averes Title Roman', serif;
-    font-size:18px;
-    line-height:1.45;
+    margin-top:18px;
+    font-family:'Raleway', sans-serif;
+    font-weight:300;
+    font-size:14px;
+    line-height:1.55;
     color:var(--taupe);
-    max-width:340px;
-  }
-  .tagline em{
-    color:var(--sage);
-    font-style:normal;
+    max-width:320px;
+    opacity:.9;
   }
 
   /* ---- Lista de links ---- */
   .links{
-    margin-top:36px;
+    margin-top:34px;
     width:100%;
     display:flex; flex-direction:column;
-    gap:14px;
+    gap:12px;
   }
 
   .link{
     display:flex; align-items:center;
     gap:14px;
     width:100%;
-    padding:16px 22px;
+    padding:15px 22px;
     background:#fff;
-    border:1px solid rgba(161,175,158,.25);
+    border:1px solid rgba(161,175,158,.30);
     border-radius:var(--radius-pill);
     color:var(--taupe);
     text-decoration:none;
-    font-size:15px;
-    font-weight:500;
-    letter-spacing:.2px;
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:.3px;
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
     position:relative;
   }
@@ -140,8 +148,8 @@
     box-shadow: 0 6px 18px rgba(78,110,71,.10);
   }
   .link .ico{
-    flex:0 0 22px;
-    width:22px; height:22px;
+    flex:0 0 20px;
+    width:20px; height:20px;
     display:inline-flex; align-items:center; justify-content:center;
     color:var(--sage);
   }
@@ -152,7 +160,7 @@
   .link .chev{
     flex:0 0 14px;
     color:var(--sage);
-    opacity:.6;
+    opacity:.55;
     transition: transform .25s ease, opacity .25s ease;
   }
   .link:hover .chev{ transform: translateX(4px); opacity:1 }
@@ -162,6 +170,7 @@
     background: var(--sage);
     border-color: var(--sage);
     color:#fff;
+    font-weight:500;
     animation: breathe 3.5s ease-in-out infinite;
   }
   .link.primary .ico,
@@ -178,6 +187,34 @@
     0%,100%{ transform: scale(1); box-shadow: 0 0 0 0 rgba(161,175,158,.35) }
     50%   { transform: scale(1.015); box-shadow: 0 0 0 10px rgba(161,175,158,0) }
   }
+
+  /* ---- Tag "em breve" ---- */
+  .tag{
+    display:inline-block;
+    padding:3px 9px;
+    border-radius:100px;
+    background:var(--beige);
+    color:var(--taupe);
+    font-size:9px;
+    font-weight:500;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    margin-left:6px;
+    vertical-align:middle;
+    line-height:1;
+  }
+
+  /* Botão "em breve" — visualmente presente, não-clicável */
+  .link.coming{
+    cursor: default;
+    opacity:.85;
+  }
+  .link.coming:hover{
+    transform:none;
+    border-color: rgba(161,175,158,.30);
+    box-shadow:none;
+  }
+  .link.coming:hover .chev{ transform:none; opacity:.55 }
 
   /* ---- Divisor ornamental ---- */
   .divider{
@@ -199,22 +236,24 @@
     margin-top:24px;
     text-align:center;
     color:var(--sage);
-    font-size:12px;
-    letter-spacing:1.5px;
+    font-size:10px;
+    font-weight:300;
+    letter-spacing:2px;
     text-transform:uppercase;
   }
   .footer .quote{
-    font-family:'Averes Title Roman', serif;
-    font-size:15px;
+    font-family:'Raleway', sans-serif;
+    font-weight:300;
+    font-size:13px;
     color:var(--taupe);
     text-transform:none;
-    letter-spacing:.2px;
+    letter-spacing:.3px;
     margin-bottom:14px;
     display:block;
+    font-style:italic;
+    opacity:.85;
   }
-  .footer .copy{
-    opacity:.7;
-  }
+  .footer .copy{ opacity:.7 }
 
   /* ---- Reduce motion ---- */
   @media (prefers-reduced-motion: reduce){
@@ -225,9 +264,9 @@
   /* ---- Mobile fine-tuning ---- */
   @media (max-width: 380px){
     body{padding:32px 16px 48px}
-    .name{font-size:30px}
-    .avatar{width:112px;height:112px}
-    .link{padding:14px 18px;font-size:14px}
+    .name{font-size:26px}
+    .avatar{width:118px;height:118px}
+    .link{padding:14px 18px;font-size:13px}
   }
 </style>
 </head>
@@ -236,99 +275,70 @@
 
     <div class="avatar" aria-hidden="true">
       <img
-        src="https://alinyrayze.com.br/wp-content/uploads/2026/04/alinyrayze-2.webp"
+        src="./avatar.jpg"
         alt="Aliny Rayze"
         loading="eager"
         decoding="async"
+        onerror="this.src='https://alinyrayze.com.br/wp-content/uploads/2026/04/alinyrayze-2.webp'"
       />
     </div>
 
     <h1 class="name">Aliny Rayze</h1>
-    <p class="role">Psicanalista <span>·</span> Atendimento Online</p>
+    <p class="role">Psicanálise &amp; Feminilidade</p>
 
     <p class="tagline">
-      Existe um jeito <em>mais claro</em> de viver.<br/>
+      Existe um jeito mais claro de viver.<br/>
       A análise começa na clareza.
     </p>
 
     <nav class="links" aria-label="Links principais">
 
+      <!-- 1. CTA primário — Agendar consulta -->
       <a class="link primary"
-         href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%20Aliny%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+         href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%20Aliny%2C%20gostaria%20de%20agendar%20minha%20consulta."
          target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
-          <!-- WhatsApp -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l.241.383-1.001 3.652 3.734-.994zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
         </span>
-        <span class="label">Agendar sessão pelo WhatsApp</span>
+        <span class="label">Agendar minha consulta</span>
         <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </span>
       </a>
 
+      <!-- 2. Site oficial -->
       <a class="link" href="https://alinyrayze.com.br/" target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
-          <!-- Globe -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
         </span>
-        <span class="label">Site oficial · alinyrayze.com.br</span>
+        <span class="label">Conheça meu site</span>
         <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </span>
       </a>
 
-      <a class="link" href="https://instagram.com/alinyrayze" target="_blank" rel="noopener">
+      <!-- 3. Spotify — em breve -->
+      <a class="link coming" aria-disabled="true" tabindex="-1">
         <span class="ico" aria-hidden="true">
-          <!-- Instagram -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+          <!-- Spotify -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.224.385-.721.504-1.106.282-3.026-1.847-6.834-2.265-11.319-1.243-.439.099-.876-.179-.975-.618-.099-.439.179-.876.618-.975 4.917-1.122 9.13-.638 12.523 1.448.385.222.504.72.259 1.106zm1.473-3.267c-.282.459-.882.604-1.341.322-3.466-2.13-8.752-2.749-12.85-1.503-.516.157-1.062-.135-1.219-.651-.157-.516.136-1.062.652-1.219 4.704-1.428 10.529-.733 14.448 1.674.459.282.604.882.31 1.377zm.126-3.403C15.066 8.205 8.564 7.97 4.846 9.097c-.617.187-1.27-.162-1.457-.779-.187-.617.162-1.27.779-1.457 4.272-1.297 11.444-1.02 15.946 1.658.555.328.736 1.044.408 1.599-.328.555-1.044.736-1.599.408z"/></svg>
         </span>
-        <span class="label">Instagram · @alinyrayze</span>
+        <span class="label">Ouça <em style="font-style:italic;">Ordem no Caos</em> no Spotify <span class="tag">em breve</span></span>
         <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </span>
       </a>
 
-      <a class="link" href="https://alinyrayze.com.br/#atendimentoonline" target="_blank" rel="noopener">
+      <!-- 4. WhatsApp -->
+      <a class="link"
+         href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%20Aliny%21"
+         target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
-          <!-- Headphone / online session -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13a9 9 0 0 1 18 0"/><rect x="3" y="13" width="5" height="7" rx="1.5"/><rect x="16" y="13" width="5" height="7" rx="1.5"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l.241.383-1.001 3.652 3.734-.994zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         </span>
-        <span class="label">Atendimento online</span>
+        <span class="label">Fale comigo no WhatsApp</span>
         <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </a>
-
-      <a class="link" href="https://alinyrayze.com.br/#quemsou" target="_blank" rel="noopener">
-        <span class="ico" aria-hidden="true">
-          <!-- Person -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-        </span>
-        <span class="label">Quem sou eu</span>
-        <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </a>
-
-      <a class="link" href="https://alinyrayze.com.br/#depoimentos" target="_blank" rel="noopener">
-        <span class="ico" aria-hidden="true">
-          <!-- Quote / hearts -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h4v4c0 2.5-1.5 4-4 5"/><path d="M15 7h4v4c0 2.5-1.5 4-4 5"/></svg>
-        </span>
-        <span class="label">Depoimentos</span>
-        <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </a>
-
-      <a class="link" href="mailto:contato@alinyrayze.com.br">
-        <span class="ico" aria-hidden="true">
-          <!-- Mail -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        </span>
-        <span class="label">E-mail · contato@alinyrayze.com.br</span>
-        <span class="chev" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </span>
       </a>
 
@@ -338,7 +348,7 @@
 
     <footer class="footer">
       <span class="quote">Coragem você já tem. O que falta é direção.</span>
-      <span class="copy">© Aliny Rayze · Psicanalista</span>
+      <span class="copy">© Aliny Rayze</span>
     </footer>
 
   </main>
