@@ -1,37 +1,7 @@
 <!--
-  ==========================================================================
-  Aliny Rayze · /links · embed pronto para WordPress
-  ==========================================================================
-
-  COMO USAR — caminho recomendado (Elementor):
-  --------------------------------------------------------------------------
-  1. wp-admin → Páginas → editar a página /links (ID 137).
-  2. Em "Configurações da página" (engrenagem do Elementor, canto inferior
-     esquerdo), trocar "Layout da Página" para:  ELEMENTOR CANVAS
-     (some o header/footer do tema — visual limpo e idêntico ao preview).
-  3. Apagar qualquer conteúdo existente da página.
-  4. Arrastar UM widget "HTML" para a página.
-  5. Colar TODO o conteúdo deste arquivo (de <style> até </main>) dentro
-     do widget HTML.
-  6. ANTES DE PUBLICAR, fazer 2 substituições (use Ctrl+F):
-       a) WHATSAPP_NUMERO   → DDI+DDD+número, ex: 5511999998888
-          (aparece em 2 botões: "Agendar minha consulta" e "Fale comigo")
-       b) URL_DA_FOTO       → URL da foto que você subir na Biblioteca de
-          Mídia (a foto da Aliny no blazer creme de cabelo cacheado).
-          Para subir: wp-admin → Mídia → Adicionar nova → copiar o URL do
-          arquivo após o upload.
-  7. Atualizar a página. Pronto.
-
-  COMO USAR — alternativa (Editor de blocos / Gutenberg):
-  --------------------------------------------------------------------------
-  - Editar a página → adicionar um bloco "HTML personalizado" → colar tudo.
-  - Mudar o template da página para "Em branco" / "Canvas" se o tema
-    estiver injetando header/footer indesejados.
-
-  OBSERVAÇÃO TÉCNICA:
-  --------------------------------------------------------------------------
-  Todo o CSS está escopado por ".aliny-links" para não conflitar com o
-  tema. Pode colar com segurança.
+  Aliny Rayze · /links · embed pronto para WordPress (Elementor HTML widget)
+  CSS escopado em .aliny-links — não conflita com o tema.
+  Lembrete: usar "Elementor Canvas" como Layout da Página antes de colar.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +25,15 @@
     font-family:'Raleway', system-ui, -apple-system, sans-serif;
     font-size:16px; line-height:1.55;
     color:var(--taupe);
-    background:var(--cream);
+    /* fundo: imagem vertical da marca + overlay cremoso para legibilidade */
+    background-color: var(--cream);
+    background-image:
+      linear-gradient(rgba(247,246,242,0.78), rgba(247,246,242,0.85)),
+      url('https://alinyrayze.com.br/wp-content/uploads/2026/04/section5-alinyrayze.webp');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
 
@@ -270,14 +248,23 @@
 
   /* Tira fundos do tema atrás da página */
   body.page-template-elementor_canvas,
-  body.page-id-137{ background:#F7F6F2 !important }
+  body.page-id-137{
+    background-color:#F7F6F2 !important;
+    background-image:
+      linear-gradient(rgba(247,246,242,0.78), rgba(247,246,242,0.85)),
+      url('https://alinyrayze.com.br/wp-content/uploads/2026/04/section5-alinyrayze.webp') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
 </style>
 
 <main class="aliny-links" role="main">
   <div class="page">
 
     <div class="avatar" aria-hidden="true">
-      <img src="URL_DA_FOTO" alt="Aliny Rayze" loading="eager" decoding="async" />
+      <img src="https://alinyrayze.com.br/wp-content/uploads/2026/04/mobile-1-e1777306889607.webp" alt="Aliny Rayze" loading="eager" decoding="async" />
     </div>
 
     <h1 class="name">Aliny Rayze</h1>
@@ -291,7 +278,7 @@
     <nav class="links" aria-label="Links principais">
 
       <a class="link primary"
-         href="https://wa.me/WHATSAPP_NUMERO?text=Ol%C3%A1%20Aliny%2C%20gostaria%20de%20agendar%20minha%20consulta."
+         href="https://wa.me/5527996219332?text=Ol%C3%A1%20Aliny%2C%20gostaria%20de%20agendar%20minha%20consulta."
          target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
@@ -312,18 +299,18 @@
         </span>
       </a>
 
-      <a class="link coming" aria-disabled="true" tabindex="-1">
+      <a class="link" href="https://open.spotify.com/show/2Nqx09P0Gv8WUYI4bW5xmo" target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.224.385-.721.504-1.106.282-3.026-1.847-6.834-2.265-11.319-1.243-.439.099-.876-.179-.975-.618-.099-.439.179-.876.618-.975 4.917-1.122 9.13-.638 12.523 1.448.385.222.504.72.259 1.106zm1.473-3.267c-.282.459-.882.604-1.341.322-3.466-2.13-8.752-2.749-12.85-1.503-.516.157-1.062-.135-1.219-.651-.157-.516.136-1.062.652-1.219 4.704-1.428 10.529-.733 14.448 1.674.459.282.604.882.31 1.377zm.126-3.403C15.066 8.205 8.564 7.97 4.846 9.097c-.617.187-1.27-.162-1.457-.779-.187-.617.162-1.27.779-1.457 4.272-1.297 11.444-1.02 15.946 1.658.555.328.736 1.044.408 1.599-.328.555-1.044.736-1.599.408z"/></svg>
         </span>
-        <span class="label">Ouça <em style="font-style:italic;">Ordem no Caos</em> no Spotify <span class="tag">em breve</span></span>
+        <span class="label">Ouça <em style="font-style:italic;">Ordem no Caos</em> no Spotify</span>
         <span class="chev" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </span>
       </a>
 
       <a class="link"
-         href="https://wa.me/WHATSAPP_NUMERO?text=Ol%C3%A1%20Aliny%21"
+         href="https://wa.me/5527996219332?text=Ol%C3%A1%20Aliny%21"
          target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l.241.383-1.001 3.652 3.734-.994zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.307 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
