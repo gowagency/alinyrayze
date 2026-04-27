@@ -199,7 +199,11 @@
     vertical-align:middle;
     line-height:1;
   }
-  .aliny-links .link.coming{ cursor: default; opacity:.85 }
+  .aliny-links .link.coming{
+    cursor: default;
+    opacity:.85;
+    pointer-events: none;     /* href fica preservado mas a navegação é bloqueada */
+  }
   .aliny-links .link.coming:hover{
     transform:none;
     border-color: rgba(161,175,158,.30);
@@ -318,11 +322,11 @@
         </span>
       </a>
 
-      <a class="link" href="https://open.spotify.com/show/2Nqx09P0Gv8WUYI4bW5xmo" target="_blank" rel="noopener">
+      <a class="link coming" href="https://open.spotify.com/show/2Nqx09P0Gv8WUYI4bW5xmo" target="_blank" rel="noopener" aria-disabled="true" tabindex="-1">
         <span class="ico" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.224.385-.721.504-1.106.282-3.026-1.847-6.834-2.265-11.319-1.243-.439.099-.876-.179-.975-.618-.099-.439.179-.876.618-.975 4.917-1.122 9.13-.638 12.523 1.448.385.222.504.72.259 1.106zm1.473-3.267c-.282.459-.882.604-1.341.322-3.466-2.13-8.752-2.749-12.85-1.503-.516.157-1.062-.135-1.219-.651-.157-.516.136-1.062.652-1.219 4.704-1.428 10.529-.733 14.448 1.674.459.282.604.882.31 1.377zm.126-3.403C15.066 8.205 8.564 7.97 4.846 9.097c-.617.187-1.27-.162-1.457-.779-.187-.617.162-1.27.779-1.457 4.272-1.297 11.444-1.02 15.946 1.658.555.328.736 1.044.408 1.599-.328.555-1.044.736-1.599.408z"/></svg>
         </span>
-        <span class="label">Ouça <em style="font-style:italic;">Ordem no Caos</em> no Spotify</span>
+        <span class="label">Ouça <em style="font-style:italic;">Ordem no Caos</em> no Spotify <span class="tag">em breve</span></span>
         <span class="chev" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </span>
