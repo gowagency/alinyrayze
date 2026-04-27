@@ -14,6 +14,7 @@
   .aliny-links{
     --sage:#A1AF9E;
     --sage-dark:#4E6E47;
+    --sage-hover:#8FA08B;
     --sage-light:#CCDBC8;
     --cream:#F7F6F2;
     --beige:#E8DCC9;
@@ -144,6 +145,11 @@
     display:inline-flex; align-items:center; justify-content:center;
     color:var(--sage);
   }
+  .aliny-links .link .ico img{
+    width:100%; height:100%;
+    object-fit:contain;
+    border-radius:4px;
+  }
   .aliny-links .link .label{ flex:1; text-align:left }
   .aliny-links .link .chev{
     flex:0 0 14px;
@@ -165,10 +171,10 @@
   .aliny-links .link.primary .chev{ color:#fff; opacity:.95 }
   .aliny-links .link.primary:hover{
     animation:none;
-    background: var(--sage-dark);
-    border-color: var(--sage-dark);
+    background: var(--sage-hover);
+    border-color: var(--sage-hover);
     transform: translateY(-2px) scale(1.015);
-    box-shadow: 0 8px 24px rgba(78,110,71,.20);
+    box-shadow: 0 8px 24px rgba(143,160,139,.25);
   }
   @keyframes alinybreathe{
     0%,100%{ transform: scale(1); box-shadow: 0 0 0 0 rgba(161,175,158,.35) }
@@ -234,6 +240,16 @@
     opacity:.85;
   }
   .aliny-links .footer .copy{ opacity:.7 }
+  .aliny-links .footer .brand{
+    display:inline-block;
+    margin-top:4px;
+    opacity:.85;
+  }
+  .aliny-links .footer .brand img{
+    width:120px; height:auto;
+    display:block;
+    margin:0 auto;
+  }
 
   @media (prefers-reduced-motion: reduce){
     .aliny-links .link.primary{ animation:none }
@@ -291,7 +307,7 @@
 
       <a class="link" href="https://alinyrayze.com.br/" target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <img src="https://alinyrayze.com.br/wp-content/uploads/2026/04/favicon-1.webp" alt="" loading="lazy" decoding="async" />
         </span>
         <span class="label">Conheça meu site</span>
         <span class="chev" aria-hidden="true">
@@ -327,7 +343,9 @@
 
     <footer class="footer">
       <span class="quote">Coragem você já tem. O que falta é direção.</span>
-      <span class="copy">© Aliny Rayze</span>
+      <span class="brand">
+        <img src="https://alinyrayze.com.br/wp-content/uploads/2026/04/logo.svg" alt="Aliny Rayze" loading="lazy" decoding="async" />
+      </span>
     </footer>
 
   </div>
