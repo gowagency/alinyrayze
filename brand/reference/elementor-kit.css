@@ -1,0 +1,24 @@
+.elementor-kit-9{--e-global-color-primary:#A1AF9E;--e-global-color-secondary:#F7F6F2;--e-global-color-text:#A1AF9E;--e-global-color-accent:#E8DCC9;--e-global-color-f2f9435:#CCDBC8;--e-global-color-eba6b6a:#4E6E47;--e-global-color-b1cf337:#8C7464;--e-global-typography-primary-font-family:"Averes Title Roman";--e-global-typography-primary-font-size:40px;--e-global-typography-primary-font-weight:400;--e-global-typography-primary-line-height:50px;--e-global-typography-secondary-font-family:"Raleway";--e-global-typography-secondary-font-size:20px;--e-global-typography-secondary-font-weight:400;--e-global-typography-secondary-line-height:28px;--e-global-typography-text-font-family:"Raleway";--e-global-typography-text-font-size:20px;--e-global-typography-text-font-weight:400;--e-global-typography-text-line-height:28px;--e-global-typography-accent-font-family:"Raleway";--e-global-typography-accent-font-size:20px;--e-global-typography-accent-font-weight:700;--e-global-typography-accent-line-height:28px;}.elementor-kit-9 e-page-transition{background-color:#FFBC7D;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){--kit-widget-spacing:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}.site-header .site-branding{flex-direction:column;align-items:stretch;}.site-header{padding-inline-end:0px;padding-inline-start:0px;}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Averes Title Roman';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('https://alinyrayze.com.br/wp-content/uploads/2026/04/AveresTitleRoman-Regular.ttf') format('truetype');
+}
+/* End Custom Fonts CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url('https://alinyrayze.com.br/wp-content/uploads/2026/04/Raleway-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: bold;
+	font-display: auto;
+	src: url('https://alinyrayze.com.br/wp-content/uploads/2026/04/Raleway-Bold.ttf') format('truetype');
+}
+/* End Custom Fonts CSS */
